@@ -1,4 +1,4 @@
-def to_base_62(value: int) -> str:
+def int_to_base_62(value: int) -> str:
   """
   Converts an integer to it's base 62 string representation.
 
@@ -10,7 +10,7 @@ def to_base_62(value: int) -> str:
   """
 
   # Symbols for base 62
-  SYMBOLS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  SYMBOLS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
   
   # Build base 62 string by repeated division using the 
   # remainder as the index of the next symbol
