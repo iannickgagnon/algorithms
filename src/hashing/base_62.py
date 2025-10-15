@@ -17,7 +17,7 @@ def int_to_base_62(value: int) -> str:
     result = ""
     while value > 0:
         value, remainder = divmod(value, 62)
-        result = SYMBOLS[remainder] + result
+        result = result + SYMBOLS[remainder] 
 
     return result
 
