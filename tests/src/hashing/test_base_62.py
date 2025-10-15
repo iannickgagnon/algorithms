@@ -1,6 +1,6 @@
 import pytest
 
-from src.hashing.base_62 import int_to_base_62
+from src.hashing.base_62 import int_to_base_62, base_62_to_int
 
 
 @pytest.mark.parametrize("value,expected", [
@@ -21,3 +21,23 @@ from src.hashing.base_62 import int_to_base_62
 ])
 def test_to_base_62(value: int, expected: str):
   assert int_to_base_62(value) == expected
+
+
+@pytest.mark.parametrize("value,expected", [
+  ("", 0),
+  ("1", 1),
+  ("z", 61),
+  ("10", 62),
+  ("1z", 123),
+  ("zy", 3842),
+  ("zzy", 238326),
+  ("zzzy", 14776334),
+  ("zzzzy", 916132830),
+  ("zzzzzy", 56800235582),
+  ("zzzzzzy", 3521614606206),
+  ("zzzzzzzy", 218340105584894),
+  ("zzzzzzzzy", 13537086546263550),
+  ("zzzzzzzzzz", 839299365868340223),
+])
+def test_from_base_62(value: str, expected: int):
+  assert base_62_to_int(value) == expected
