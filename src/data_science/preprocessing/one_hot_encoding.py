@@ -6,7 +6,7 @@ def one_hot_encode(features: list[str]) -> list:
     features (list[str]): List of features to encode.
 
   Returns:
-    (list): The ont-hot encoded matrix with the following properties:
+    (list): The one-hot encoded matrix with the following properties:
       - The first row is the list of unique features.
       - The following rows correspond to an identity matrix where M[i, j] == 1 if i == j, and 0 otherwise. 
   """
