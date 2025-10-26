@@ -17,7 +17,7 @@ def get_min_max_scaled_values(x: list[int | float]) -> list[float]:
     raise ValueError("Input list must not be empty")
 
   if not all(isinstance(value, (int, float)) for value in x):
-    raise TypeError("Elements must int or float type")
+    raise TypeError("Elements must be int or float")
 
   # Calculate limits and range
   x_min = min(x)
