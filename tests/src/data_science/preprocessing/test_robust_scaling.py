@@ -19,7 +19,22 @@ def test_valid_input_success():
 
   assert pytest.approx(obtained_result) == expected_result
 
-  
+
+def test_null_iqr_success():
+  """
+  Tests that the function returns the correct result when the interquartile range is null.
+  """
+
+  # Get result
+  input_value = [2, 2, 2, 2, 2]
+  obtained_result = robust_scale(input_value)
+
+  # Reference
+  expected_result = [0.0, 0.0, 0.0, 0.0, 0.0]
+
+  assert obtained_result == expected_result
+
+
 def test_raises_wrong_input_type():
   """
   Tests that the proper error is raised when the input is of the incorrect type.
